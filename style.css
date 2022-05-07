@@ -1,0 +1,47 @@
+html {
+    min-height: 100vh;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+}
+
+body {
+    background-color: ;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    height: 400px;
+    width: 400px;
+    border: 2px solid black;
+}
+
+.header, .footer {
+    background-color: #7f8eb5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item {
+    border: solid;
+}
+
+.header {
+    font-size: 36px;
+}
