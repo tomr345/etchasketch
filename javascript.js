@@ -1,13 +1,16 @@
 let newColour = "";
+let DEFAULT_SIZE = 16;
+let newSize = "";
 
-function createGrid() {
+function createGrid(size) {
     const gridContainer = document.querySelector(".grid");
-    gridContainer.style.gridTemplateColumns = `repeat(16, 1fr)`;
-    gridContainer.style.gridTemplateRows = `repeat(16, 1fr)`;
+    newSize = size;
+    gridContainer.style.gridTemplateColumns = `repeat(${newSize}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${newSize}, 1fr)`;
     gridContainer.style.borderColor = "black";
     gridContainer.style.borderWidth = "thin";
 
-    for (let i = 0; i < 16*16; i++) {
+    for (let i = 0; i < newSize*newSize; i++) {
         const div = document.createElement("div");
         div.classList.add('grid-item');
         gridContainer.appendChild(div);
@@ -20,31 +23,47 @@ function updateColour(colour) {
 }
 
 function fillSquares(colour) {
-    console.log(squares);
-    squares.forEach((square) => {
-        square.addEventListener('mouseover', e => {
+    // console.log(squares);
+    
+    // squares.forEach((square) => {
+    //     square.addEventListener('mouseover', e => {
+    //         e.target.style.backgroundColor = `${colour}`;
+    //     });
+    // });
+
+    const newGrid = document.querySelectorAll('.grid-item');
+    newGrid.forEach((grid) => {
+        grid.addEventListener('mouseover', e => {
             e.target.style.backgroundColor = `${colour}`;
-        });
-    });
+        })
+    })
 }
 
 function clearGrid() {
-    squares.forEach((square) => square.style.backgroundColor = "white");
+    grid.innerHTML = '';
+    createGrid(newSize);
 }
 
 //actually running the etchasketch
 
-createGrid();
+createGrid(DEFAULT_SIZE);
 
 const normalBtn = document.getElementById('normal');
 const eraserBtn = document.getElementById('eraser');
 const clearBtn = document.getElementById('clear');
+const changeBtn = document.getElementById('size');
 const squares = document.querySelectorAll('.grid-item');
+const grid = document.querySelector('.grid');
 
 normalBtn.addEventListener('click', () => {
-    updateColour("black");
+    updateColour("#7f8eb5");
 });
 eraserBtn.addEventListener('click', () => {
     updateColour("white");
 });
 clearBtn.addEventListener('click', clearGrid);
+changeBtn.addEventListener('click', () => {
+    let answer = prompt("Enter new grid size:");
+    clearGrid();
+    createGrid(answer);
+})

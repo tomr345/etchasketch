@@ -11,10 +11,19 @@ body {
     padding: 0;
 }
 
+button {
+    padding: 6px;
+    color: white;
+    background-color: #7f8eb5;
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+}
+
 .container {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 5fr;
 }
 
 .main {
@@ -33,22 +42,19 @@ body {
 
 .grid {
     display: grid;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     border: 2px solid black;
 }
 
-.header, .footer {
+.header{
     background-color: #7f8eb5;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 36px;
 }
 
 .grid-item {
     border: solid;
-}
-
-.header {
-    font-size: 36px;
 }
