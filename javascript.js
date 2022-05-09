@@ -7,6 +7,7 @@ function createGrid(size) {
     newSize = size;
     gridContainer.style.gridTemplateColumns = `repeat(${newSize}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${newSize}, 1fr)`;
+    gridContainer.style.borderWidth = 0;
     gridContainer.style.borderColor = "black";
     gridContainer.style.borderWidth = "thin";
 
@@ -64,6 +65,8 @@ eraserBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', clearGrid);
 changeBtn.addEventListener('click', () => {
     let answer = prompt("Enter new grid size:");
-    clearGrid();
-    createGrid(answer);
+    if (answer < 65) {
+        clearGrid();
+        createGrid(answer);
+    }
 })

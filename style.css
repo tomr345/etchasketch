@@ -23,7 +23,7 @@ button {
 .container {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 7fr;
 }
 
 .main {
