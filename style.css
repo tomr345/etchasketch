@@ -6,7 +6,6 @@ html {
 }
 
 body {
-    background-color: ;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -22,6 +21,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 100px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 25px;
 }
 
 .grid {
